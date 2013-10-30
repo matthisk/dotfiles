@@ -22,3 +22,20 @@ fi
 alias l="ls -l ${colorflag}"
 alias la="ls -la ${colorflag}"
 alias lsd='ls -l | grep "^d"'
+
+# PHP SERVER
+alias phps="php -s localhost:8000"
+
+# GIT
+alias gcm="git commit -m"
+alias gpom="git push origin master"
+alias gp="git pull"
+alias gc="git clone"
+
+# Flush Directory Service cache
+alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+
+# View HTTP traffic
+alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
