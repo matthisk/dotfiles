@@ -1,0 +1,17 @@
+# Environment Variable Export
+export MAVEN_OPTS="-Xmx5g -XX:MaxPermSize=128m"
+export PATH=$PATH:/usr/local/mysql/bin/
+export PATH=/Users/wires/opt/apache-maven-3.0.4/bin:/Users/matthisk/bin:/usr/local/bin:$PATH
+
+# Set java version to 1.6
+export JAVALESS_PATH=$PATH
+export JAVA_VERSION=1.6
+export JAVA=/System/Library/Frameworks/JavaVM.framework/Versions/$JAVA_VERSION/
+export JAVA_HOME=${JAVA}/Home
+export PATH=${JAVA}/Commands:$JAVALESS_PATH
+echo  JAVA_HOME ${PREV} "->" ${JAVA_HOME} "(" `java -version 2>&1 | grep Runtime ` ")"
+
+#SENCHA
+export PATH=/Users/matthisk/bin/Sencha/Cmd/4.0.0.203:$PATH
+export SENCHA_CMD_3_0_0="/Users/matthisk/bin/Sencha/Cmd/4.0.0.203"
+

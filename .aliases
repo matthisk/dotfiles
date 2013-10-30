@@ -1,0 +1,24 @@
+# EASIER NAVIAGTION
+alias ..="cd .."
+alias cd..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# PROGRAMS
+alias subl='open -a "Sublime Text 2"'
+
+# EDIT HOSTS
+alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
+
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+        colorflag="--color"
+else # OS X `ls`
+        colorflag="-G"
+fi
+
+# LS ALIASES
+alias l="ls -l ${colorflag}"
+alias la="ls -la ${colorflag}"
+alias lsd='ls -l | grep "^d"'
