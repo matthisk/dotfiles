@@ -65,4 +65,12 @@ function extract() {
         fi
 }
 
-
+# This runs the compass compile command in all child directories
+# usefull for compiling multiple skins based on a default skin
+function compcompile() {
+  for dir in */
+  do
+    dir=${dir%*/}
+    compass compile ${dir}
+  done
+}
