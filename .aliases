@@ -6,7 +6,6 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # PROGRAMS
-alias subl='open -a "Sublime Text 2"'
 
 # EDIT HOSTS
 alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
