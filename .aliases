@@ -6,7 +6,6 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # PROGRAMS
-alias subl='open -a "Sublime Text 2"'
 
 # OSX Specific MYSQLD
 alias osxmysql='sudo /usr/local/mysql/support-files/mysql.server'
