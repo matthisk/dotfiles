@@ -2,6 +2,9 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 set history=1000       " keep 1000 lines of command line history
@@ -28,8 +31,33 @@ set shiftwidth=2       " for when <TAB> is pressed at the beginning of a line
 
 set mouse=a
 
-execute pathogen#infect()
+" Airline configuration 
+set laststatus=2
+let g:airline_powerline_fonts=1
+let g:airline_theme='dark'
+
+" NERDtree configuration
+nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
+let g:nerdtree_tabs_open_on_console_startup = 1
+
+map <C-l> :tabn<CR>
+map <C-h> :tabp<CR>
+map <C-n> :tabnew<CR>
+
+" Syntastic configuration
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Tagbar configuration
+nmap <F8> :TagbarToggle<CR>
 
 syntax enable          " Set the colorscheme to solarized with dark background
-set background=dark
+let g:solarized_termtrans=1
 colorscheme solarized
+set background=dark
