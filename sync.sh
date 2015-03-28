@@ -1,9 +1,29 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 git pull
-function doIt() {
-        rsync --exclude ".git/" --exclude ".DS_Store" --exclude "sync.sh" --exclude "README.md" -av . ~
+
+function abspath {
+    if [[ -d "$1" ]]
+    then
+        pushd "$1" >/dev/null
+        pwd
+        popd >/dev/null
+    elif [[ -e $1 ]]
+    then
+        pushd "$(dirname "$1")" >/dev/null
+        echo "$(pwd)/$(basename "$1")"
+        popd >/dev/null
+    else
+        echo "$1" does not exist! >&2
+        return 127
+    fi
 }
+
+function doIt() {
+        rsync --exclude ".git/" --exclude "vim/" --exclude ".DS_Store" --exclude "sync.sh" --exclude "README.md" -av . ~
+        ln -s $(abspath ./vim)  ~/.vim 
+}
+
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
         doIt
 else

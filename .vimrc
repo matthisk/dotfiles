@@ -1,5 +1,3 @@
-set nocompatible
-
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -32,8 +30,6 @@ set mouse=a
 
 execute pathogen#infect()
 
-syntax on
-
-filetype plugin indent on
-
-
+syntax enable          " Set the colorscheme to solarized with dark background
+set background=dark
+colorscheme solarized
