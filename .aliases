@@ -38,6 +38,7 @@ alias gcm="git commit -m"
 alias gpom="git push origin master"
 alias gp="git pull"
 alias gc="git clone"
+alias git-pup="git submodule init && git submodule update"
 
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
@@ -52,3 +53,4 @@ alias please="sudo"
 # Compass aliases
 alias compw="compass watch"
 alias compc="compass compile --force"
+
