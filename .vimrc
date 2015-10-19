@@ -34,7 +34,7 @@ set mouse=a
 " Airline configuration 
 set laststatus=2
 let g:airline_powerline_fonts=1
-let g:airline_theme='dark'
+let g:airline_theme='solarized'
 
 " NERDtree configuration
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
