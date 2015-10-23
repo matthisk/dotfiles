@@ -31,10 +31,23 @@ set shiftwidth=2       " for when <TAB> is pressed at the beginning of a line
 
 set mouse=a
 
+" Copy shortcuts
+noremap <C-c> :w !pbcopy<CR><CR>
+noremap <C-v> :r !pbpaste<CR><CR>
+
 " Airline configuration 
 set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline_theme='solarized'
+
+" Promptline configuration
+let g:promptline_preset = {
+  \'a' : [ promptline#slices#python_virtualenv() ],
+  \'b' : [ '\u' ],
+  \'c' : [ '\w' ],
+  \'x' : [ promptline#slices#vcs_branch() ],
+  \'y' : [ promptline#slices#git_status() ],
+  \'warn' : [ promptline#slices#last_exit_code() ]}
 
 " NERDtree configuration
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
@@ -52,6 +65,9 @@ let g:syntastic_check_on_wq = 0
 
 " Tagbar configuration
 nmap <F8> :TagbarToggle<CR>
+
+" Uncomment below to diable 'swap files' (e.g. .myfile.txt.swp) from being created
+set noswapfile
 
 syntax enable          " Set the colorscheme to solarized with dark background
 let g:solarized_termtrans=1
