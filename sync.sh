@@ -19,9 +19,16 @@ function abspath {
     fi
 }
 
+function syncZsh() {
+  if [ -n "$ZSH_CUSTOM" ]; then
+    rsync -avr ./zsh/ $ZSH_CUSTOM
+  fi
+}
+
 function doIt() {
-        rsync --exclude ".git/" --exclude "vim/" --exclude ".DS_Store" --exclude "sync.sh" --exclude "README.md" -av . ~
-        ln -s $(abspath ./vim)  ~/.vim 
+  syncZsh
+  rsync --exclude ".git/" --exclude "vim/" --exclude ".DS_Store" --exclude "sync.sh" --exclude "README.md" -av . ~
+  ln -s $(abspath ./vim)  ~/.vim 
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
@@ -34,4 +41,5 @@ else
         fi
 fi
 unset doIt
-source ~/.bash_profile
+
+

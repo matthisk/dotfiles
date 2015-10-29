@@ -43,11 +43,12 @@ let g:airline_theme='solarized'
 " Promptline configuration
 let g:promptline_preset = {
   \'a' : [ promptline#slices#python_virtualenv() ],
-  \'b' : [ '\u' ],
-  \'c' : [ '\w' ],
+  \'b' : [ '%n' ],
+  \'c' : [ '%~', '$(if [ ! -w $PWD ] ; then printf "%s" "" ; fi)'],
   \'x' : [ promptline#slices#vcs_branch() ],
   \'y' : [ promptline#slices#git_status() ],
-  \'warn' : [ promptline#slices#last_exit_code() ]}
+  \'z' : [ '$vim_mode' ],
+  \'warn' : [ promptline#slices#last_exit_code(), promptline#slices#battery() ]}
 
 " NERDtree configuration
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>

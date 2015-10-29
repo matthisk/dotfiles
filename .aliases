@@ -31,15 +31,6 @@ alias lsd='ls -l | grep "^d"'
 # PHP SERVER
 alias phps="php -s localhost:8000"
 
-# GIT
-alias g="git"
-alias ga="git add"
-alias gcm="git commit -m"
-alias gpom="git push origin master"
-alias gp="git pull"
-alias gc="git clone"
-alias git-pup="git submodule init && git submodule update"
-
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
@@ -54,3 +45,9 @@ alias please="sudo"
 alias compw="compass watch"
 alias compc="compass compile --force"
 
+# Reload configurations
+if [ -n "$ZSH_VERSION" ]; then
+  alias reload="source ~/.zshrc"
+elif [ -n "$BASH_VERSION" ]; then
+  alias reload="source ~/.bash_profile"
+fi

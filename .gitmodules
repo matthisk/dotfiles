@@ -43,3 +43,6 @@
 [submodule "vim/bundle/promptline.vim"]
 	path = vim/bundle/promptline.vim
 	url = https://github.com/edkolev/promptline.vim
+[submodule "vim/bundle/vim-jsdoc"]
+	path = vim/bundle/vim-jsdoc
+	url = git@github.com:heavenshell/vim-jsdoc.git
