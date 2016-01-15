@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/matthisk/Repositories/stream-js/test'
+let g:netrw_dirhist_2='/Users/matthisk/.oh-my-zsh'
+let g:netrw_dirhist_3='/Users/matthisk/Repositories/stream-js/test'
+let g:netrw_dirhist_4='/private/tmp/test/node_modules'

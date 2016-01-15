@@ -51,3 +51,8 @@ if [ -n "$ZSH_VERSION" ]; then
 elif [ -n "$BASH_VERSION" ]; then
   alias reload="source ~/.bash_profile"
 fi
+
+# Running Stream aliases
+alias stream-local="ENVIRONMENT=development_local python manage.py"
+alias stream-remote="ENVIRONMENT=development python manage.py"
+alias stream-testing="ENVIRONMENT=testing python manage.py"

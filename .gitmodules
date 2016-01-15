@@ -46,3 +46,12 @@
 [submodule "vim/bundle/vim-jsdoc"]
 	path = vim/bundle/vim-jsdoc
 	url = git@github.com:heavenshell/vim-jsdoc.git
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "zsh/plugins/zsh-syntax-highlighting"]
+	path = zsh/plugins/zsh-syntax-highlighting
+	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "scm_breeze"]
+	path = scm_breeze
+	url = git@github.com:ndbroadbent/scm_breeze.git

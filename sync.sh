@@ -27,7 +27,7 @@ function syncZsh() {
 
 function doIt() {
   syncZsh
-  rsync --exclude ".git/" --exclude "vim/" --exclude ".DS_Store" --exclude "sync.sh" --exclude "README.md" -av . ~
+  rsync --exclude ".git/" --exclude "vim/" --exclude ".DS_Store" --exclude "scm_breeze" --exclude "sync.sh" --exclude "README.md" -av . ~
   ln -s $(abspath ./vim)  ~/.vim 
 }
 
@@ -42,4 +42,4 @@ else
 fi
 unset doIt
 
-
+sh './scm_breeze/install.sh'

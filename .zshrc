@@ -5,7 +5,7 @@ export ZSH=/Users/matthisk/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME=""
+# ZSH_THEME=""
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,7 +49,7 @@ ZSH_THEME=""
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git virtualenv jsontools gulp)
+plugins=(virtualenv jsontools gulp zsh-syntax-highlighting)
 
 # User configuration
 
@@ -86,38 +86,9 @@ source $ZSH/oh-my-zsh.sh
 # Fix white space on right side of prompt (promptline)
 ZLE_RPROMPT_INDENT=0
 
-# Insert and Normal mode detection for promptline
-vim_ins_mode="-- INSERT --"
-vim_cmd_mode="-- NORMAL --"
-vim_mode=$vim_ins_mode
-
-function zle-keymap-select {
-  vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
-  __promptline
-  zle reset-prompt
-}
-zle -N zle-keymap-select
-
-function zle-line-finish {
-  vim_mode=$vim_ins_mode
-}
-zle -N zle-line-finish
-
-function TRAPINT() {
-  vim_mode=$vim_ins_mode
-  return $(( 128 + $1 ))
-}
-
-source ~/.promptline
-
-
 # Load ~/.extra, ~/.exports, ~/.aliases and ~/.functions
 # ~/.extra can be used for settings you don’t want to commit
 for file in ~/.{extra,promptline,exports,aliases,functions}; do
         [ -r "$file" ] && source "$file"
 done
 unset file
-
-# Set zsh to vim mode (unleash the beast)
-bindkey -v;
-
