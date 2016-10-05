@@ -92,3 +92,11 @@ for file in ~/.{extra,promptline,exports,aliases,functions}; do
         [ -r "$file" ] && source "$file"
 done
 unset file
+
+# LOAD RVM
+export RVM_DIR="$HOME/.rvm"
+[ -s "$RVM_DIR/scripts/rvm" ] && source $RVM_DIR/scripts/rvm
+
+# LOAD NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
