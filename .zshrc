@@ -93,6 +93,12 @@ for file in ~/.{extra,promptline,exports,aliases,functions}; do
 done
 unset file
 
+# LOAD SCM BREEZE
+[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+
+# ENABLE ZSH COMPLETIONS
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 # LOAD RVM
 export RVM_DIR="$HOME/.rvm"
 [ -s "$RVM_DIR/scripts/rvm" ] && source $RVM_DIR/scripts/rvm
