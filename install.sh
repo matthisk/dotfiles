@@ -2,27 +2,46 @@
 cd "$(dirname "$0")"
 git pull
 
+
 function installCTAGS() {
   echo "Now installing CTAGS"
   brew install ctags
 }
 
-function installPIP() {
-    echo "Installing PIP"
-    if [[ -e "./get-pip.py" ]]
-    then
-      echo "PIP already installed"
-    else
-      echo "PIP install requires sudo"
-      curl -o get-pip.py https://bootstrap.pypa.io/get-pip.py
-      sudo python get-pip.py
-    fi
+function installGoLang() {
+  echo "Creating GO home directory"
+  if [[ -e "$HOME/Go" ]]
+  then
+    echo "$HOME/Go already exists"
+  else
+    mkdir $HOME/Go
+  fi
+  mkdir -p $HOME/Go/src/github.com/user
+
+  GOPATH=$HOME/Go
+  GOROOT=/usr/local/opt/go/libexec
+  PATH=$PATH:$GOPATH/bin
+  PATH=$PATH:$GOROOT/bin
+
+  echo "Now installing go using homebrew"
+  brew install go
+}
+
+function installPython3() {
+  echo "Now installing Python3 (using homebrew)"
+  brew install python3
+}
+
+function installAWSCLI() {
+  echo "Now installing AWS CLI"
+  pip3 install awscli 
 }
 
 function installVirtualEnv() {
   echo "Installing Python virtualenv"
   echo "Installing virtualenv requires sudo"
-  sudo pip install virtualenv
+  pip3 install virtualenv
+  pip3 install virtualenvwrapper --ignore-installed six
 }
 
 function installNVM() {
@@ -31,25 +50,25 @@ function installNVM() {
 }
 
 function installZSH() {
-    echo "Installing ZSH Terminal Emulator"
-    brew install zsh zsh-completions
+  echo "Installing ZSH Terminal Emulator"
+  brew install zsh zsh-completions
 }
 
 function installOhMyZSH() {
-    echo "Installing Oh My ZSH"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  echo "Installing Oh My ZSH"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 }
 
 function installSCMBreeze() {
-    echo "Installing SCM Breeze"
-    if [[ -e "./scm_breeze" ]]
-    then
-      echo "Already cloned SCM Breeze"
-    else
-      echo "Cloning SCM Breeze"
-      git clone git://github.com/scmbreeze/scm_breeze.git ./scm_breeze
-    fi
-    sh './scm_breeze/install.sh'
+  echo "Installing SCM Breeze"
+  if [[ -e "./scm_breeze" ]]
+  then
+    echo "Already cloned SCM Breeze"
+  else
+    echo "Cloning SCM Breeze"
+    git clone git://github.com/scmbreeze/scm_breeze.git ./scm_breeze
+  fi
+  sh './scm_breeze/install.sh'
 }
 
 function installPathogen() {
@@ -69,9 +88,11 @@ function doIt() {
   installPathogen
   installCTAGS
   installSCMBreeze
-  installPIP
+  installPython3
   installVirtualEnv
   installNVM
+  installGoLang
+  installAWSCLI
 }
 
 doIt
