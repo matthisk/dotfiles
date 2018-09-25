@@ -1,0 +1,37 @@
+#!/bin/bash
+sanbox_init_rvm() {
+  # LOAD RVM
+  export RVM_DIR="$HOME/.rvm"
+  [ -s "$RVM_DIR/scripts/rvm" ] && source $RVM_DIR/scripts/rvm
+}
+
+sandbox_init_nvm() {
+  # LOAD NVM
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+}
+
+sandbox_init_scmbreeze() {
+  # LOAD SCM BREEZE
+  [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+}
+
+sandbox_init_kubectlcomplete() {
+  # The next line enables shell command completion for kubectl
+  if [ $commands[kubectl] ]; then
+    source <(kubectl completion zsh)
+  fi
+}
+
+sandbox_init_gcloudcomplete() {
+  # The next line enables shell command completion for gcloud.
+  if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+}
+
+sandbox_hook nvm node
+sandbox_hook nvm nodemon
+sandbox_hook nvm npm
+sandbox_hook nvm yarn
+sandbox_hook scmbreeze git
+sandbox_hook kubectlcomplete kubectl
+sandbox_hook gcloudcomplete gcloud

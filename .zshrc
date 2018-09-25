@@ -37,6 +37,8 @@ ZSH_THEME="risto"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+DISABLE_UPDATE_PROMPT=true
+
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
@@ -49,7 +51,7 @@ ZSH_THEME="risto"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(virtualenv jsontools gulp zsh-syntax-highlighting)
+plugins=()
 
 # User configuration
 
@@ -88,21 +90,13 @@ ZLE_RPROMPT_INDENT=0
 
 # Load ~/.extra, ~/.exports, ~/.aliases and ~/.functions
 # ~/.extra can be used for settings you don’t want to commit
-for file in ~/.{extra,promptline,exports,aliases,functions}; do
-        [ -r "$file" ] && source "$file"
+for file in ~/.{extra,exports,aliases,functions}; do
+  [ -r "$file" ] && source "$file"
 done
 unset file
 
-# LOAD SCM BREEZE
-[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud-sdk/path.zsh.inc"; fi
 
-# ENABLE ZSH COMPLETIONS
-fpath=(/usr/local/share/zsh-completions $fpath)
-
-# LOAD RVM
-export RVM_DIR="$HOME/.rvm"
-[ -s "$RVM_DIR/scripts/rvm" ] && source $RVM_DIR/scripts/rvm
-
-# LOAD NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+# Lazy Load NVM/RVM
+source /usr/local/bin/sandboxd

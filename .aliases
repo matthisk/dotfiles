@@ -52,10 +52,8 @@ elif [ -n "$BASH_VERSION" ]; then
   alias reload="source ~/.bash_profile"
 fi
 
-# Running Stream aliases
-alias stream-local="ENVIRONMENT=development_local python manage.py"
-alias stream-remote="ENVIRONMENT=development python manage.py"
-alias stream-testing="ENVIRONMENT=testing python manage.py"
-
 # Killing Django Dev Server(s)
 alias kill-django="ps | grep \"python manage.py runserver\" | grep -v \"grep\" | awk '{ print $1 }' | xargs kill"
+
+# Git
+alias gm="git push origin -u HEAD"

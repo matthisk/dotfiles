@@ -34,19 +34,33 @@ function installPython3() {
 
 function installAWSCLI() {
   echo "Now installing AWS CLI"
-  pip3 install awscli 
+  pip3 install awscli --upgrade
 }
 
 function installVirtualEnv() {
   echo "Installing Python virtualenv"
   echo "Installing virtualenv requires sudo"
-  pip3 install virtualenv
-  pip3 install virtualenvwrapper --ignore-installed six
+  pip3 install virtualenv --upgrade
+  pip3 install virtualenvwrapper --upgrade
 }
 
 function installNVM() {
   echo "Installing Node Version Manager"
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+  echo "Installing stable node"
+  echo "Creating /usr/local/bin/node /usr/local/bin/npm"
+
+  echo "#\!/bin/bash
+export NVM_DIR=\"/usr/local/nvm\"
+[ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\"
+npm \$@" > /usr/local/bin/npm
+  chmod +x /usr/local/bin/npm
+
+  echo "#\!/bin/bash
+export NVM_DIR=\"/usr/local/nvm\"
+[ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\"
+node \$@" > /usr/local/bin/node
+  chmod +x /usr/local/bin/node
 }
 
 function installZSH() {
@@ -82,6 +96,11 @@ function installPathogen() {
   fi
 }
 
+function installUtils() {
+  echo "Installing utils: lnav, tig"
+  brew install lnav tig
+}
+
 function doIt() {
   installZSH
   installOhMyZSH
@@ -93,6 +112,7 @@ function doIt() {
   installNVM
   installGoLang
   installAWSCLI
+  installUtils
 }
 
 doIt

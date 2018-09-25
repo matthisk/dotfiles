@@ -74,3 +74,24 @@ function compcompile() {
     compass compile ${dir}
   done
 }
+
+# Create a logbook entry
+function lb() {
+    vim ~/logbook/$(date '+%Y-%m-%d').md
+}
+
+function printlb() {
+  for filename in $HOME/logbook/*; do
+    echo "\033[0;32m$filename\033[0m"
+    cat "$filename"
+  done
+}
+
+function kGcrSecret() {
+  kubectl delete secret gcr;
+  kubectl create secret docker-registry gcr \
+    --docker-server=https://eu.gcr.io \
+    --docker-username=oauth2accesstoken \
+    --docker-password="$(gcloud auth print-access-token)" \
+    --docker-email=mheimensen@xebia.com
+}
