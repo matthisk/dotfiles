@@ -32,6 +32,9 @@ sandbox_hook nvm node
 sandbox_hook nvm nodemon
 sandbox_hook nvm npm
 sandbox_hook nvm yarn
+sandbox_hook nvm hob
 sandbox_hook scmbreeze git
+sandbox_hook scmbreeze g
+sandbox_hook scmbreeze gs
 sandbox_hook kubectlcomplete kubectl
 sandbox_hook gcloudcomplete gcloud
