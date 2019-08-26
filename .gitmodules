@@ -1,60 +1,6 @@
-[submodule "vim/bundle/vim-pathogen"]
-	path = vim/bundle/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen.git
-[submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
-	url = https://github.com/bling/vim-airline
-[submodule "vim/bundle/vim-fugitive"]
-	path = vim/bundle/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/vim-nerdtree"]
-	path = vim/bundle/vim-nerdtree
-	url = git@github.com:scrooloose/nerdtree.git
-[submodule "vim/bundle/vim-nerdtree-tabs"]
-	path = vim/bundle/vim-nerdtree-tabs
-	url = https://github.com/jistr/vim-nerdtree-tabs.git
-[submodule "vim/bundle/vim-syntastic"]
-	path = vim/bundle/vim-syntastic
-	url = https://github.com/scrooloose/syntastic.git
-[submodule "vim/bundle/vim-misc"]
-	path = vim/bundle/vim-misc
-	url = git@github.com:xolox/vim-misc.git
-[submodule "vim/bundle/vim-easytags"]
-	path = vim/bundle/vim-easytags
-	url = git@github.com:xolox/vim-easytags.git
-[submodule "vim/bundle/vim-tagbar"]
-	path = vim/bundle/vim-tagbar
-	url = git@github.com:majutsushi/tagbar.git
-[submodule "vim/bundle/vim-ctrlp"]
-	path = vim/bundle/vim-ctrlp
-	url = git@github.com:kien/ctrlp.vim.git
-[submodule "vim/bundle/vim-delimitMate"]
-	path = vim/bundle/vim-delimitMate
-	url = git@github.com:Raimondi/delimitMate.git
-[submodule "vim/bundle/vim-tmux-navigator"]
-	path = vim/bundle/vim-tmux-navigator
-	url = git@github.com:christoomey/vim-tmux-navigator.git
-[submodule "vim/bundle/vim-surround"]
-	path = vim/bundle/vim-surround
-	url = git://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/promptline.vim"]
-	path = vim/bundle/promptline.vim
-	url = https://github.com/edkolev/promptline.vim
-[submodule "vim/bundle/vim-jsdoc"]
-	path = vim/bundle/vim-jsdoc
-	url = git@github.com:heavenshell/vim-jsdoc.git
-[submodule "vim/bundle/nerdcommenter"]
-	path = vim/bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/plugins/zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "scm_breeze"]
 	path = scm_breeze
 	url = git@github.com:ndbroadbent/scm_breeze.git
-[submodule "vim/bundle/vim-colors-solarized"]
-	path = vim/bundle/vim-colors-solarized
-	url = git@github.com:altercation/vim-colors-solarized.git
-[submodule "vim/bundle/vim-airline-themes"]
-	path = vim/bundle/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes

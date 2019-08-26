@@ -28,14 +28,7 @@ function syncZsh() {
 
 function doIt() {
   syncZsh
-  rsync --exclude ".git/" --exclude "vim/" --exclude "iterm/" --exclude ".DS_Store" --exclude "scm_breeze" --exclude "sync.sh" --exclude "README.md" -av . ~
-  
-  if [[ -e "$HOME/.vim" ]]
-  then
-    echo "Already simlinked vim plugins"
-  else
-    ln -s $(abspath ./vim)  ~/.vim 
-  fi
+  rsync --exclude ".git/" --exclude "iterm/" --exclude ".DS_Store" --exclude "scm_breeze" --exclude "sync.sh" --exclude "README.md" -av . ~
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
