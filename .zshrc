@@ -98,5 +98,13 @@ unset file
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud-sdk/path.zsh.inc"; fi
 
-# Lazy Load NVM/RVM
+# The next line initializes scm breeze
+if [ -s "$HOME/.scm_breeze/scm_breeze.sh" ]; then source "$HOME/.scm_breeze/scm_breeze.sh"; fi
+
+# Initialize the nix environment
+if [ -s "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+  . "$HOME/.nix-profile/etc/profile.d/nix.sh";
+fi
+
+# Lazy Load kubectl autocomplete
 source /usr/local/bin/sandboxd

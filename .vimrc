@@ -42,19 +42,12 @@ let g:airline_theme='solarized'
 
 " Promptline configuration
 let g:promptline_preset = {
-  \'a' : [ promptline#slices#python_virtualenv() ],
   \'b' : [ '%n' ],
   \'c' : [ '%~', '$(if [ ! -w $PWD ] ; then printf "%s" "" ; fi)'],
   \'x' : [ promptline#slices#vcs_branch() ],
   \'y' : [ promptline#slices#git_status() ],
   \'z' : [ '%*' ],
   \'warn' : [ promptline#slices#last_exit_code(), promptline#slices#battery() ]}
-
-" NERDtree configuration
-nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
-let g:nerdtree_tabs_open_on_console_startup = 1
-let NERDTreeIgnore = ['\.pyc$']
-let g:ctrlp_custom_ginore = 'node_modules\|DS_Store|git|pyc'
 
 " Syntastic configuration
 set statusline+=%#warningmsg#
