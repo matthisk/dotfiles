@@ -11,5 +11,4 @@ sandbox_init_gcloudcomplete() {
 }
 
 sandbox_hook kubectlcomplete kubectl
-sandbox_hook kubectlcomplete k
 sandbox_hook gcloudcomplete gcloud

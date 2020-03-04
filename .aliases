@@ -57,3 +57,8 @@ alias kill-django="ps | grep \"python manage.py runserver\" | grep -v \"grep\" |
 
 # Git
 alias gm="git push origin -u HEAD"
+
+alias vim="nvim"
+
+# Tig
+alias t="tig"

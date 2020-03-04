@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="bureau"
+ZSH_THEME="minimal"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +51,7 @@ DISABLE_UPDATE_PROMPT=true
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=()
+plugins=(docker docker-compose)
 
 # User configuration
 
@@ -104,6 +104,11 @@ if [ -s "$HOME/.scm_breeze/scm_breeze.sh" ]; then source "$HOME/.scm_breeze/scm_
 # Initialize the nix environment
 if [ -s "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
   . "$HOME/.nix-profile/etc/profile.d/nix.sh";
+fi
+
+# Initialize direnv
+if [ -x "$(command -v direnv)" ]; then
+  eval "$(direnv hook zsh)"
 fi
 
 # Lazy Load kubectl autocomplete
