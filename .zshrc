@@ -110,6 +110,3 @@ fi
 if [ -x "$(command -v direnv)" ]; then
   eval "$(direnv hook zsh)"
 fi
-
-# Lazy Load kubectl autocomplete
-source /usr/local/bin/sandboxd
